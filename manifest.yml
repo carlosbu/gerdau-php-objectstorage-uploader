@@ -1,0 +1,17 @@
+---
+declared-services:
+  Uploader_Object-Storage:
+    label: Object-Storage
+    plan: Free
+
+applications:
+- path: .
+  memory: 128M
+  instances: 1
+  domain: mybluemix.net
+  name: gerdau-php-uploader
+  host: gerdau-php-uploader
+  disk_quota: 1024M
+  buildpack: https://github.com/cloudfoundry/php-buildpack
+  services:
+    - Uploader_Object-Storage
